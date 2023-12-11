@@ -162,3 +162,62 @@
 </div>
 
 <hr>
+
+<hr>
+  <div>
+  <form action="/sign_up_for_menu_item" method="post">
+    <input type="hidden" name="menu_id" value="<%= @the_menu.id %>">
+    <label for="roast_beef_pans_quantity">Roast Beef Pans:</label>
+    <input id="roast_beef_pans_quantity" type="number" name="roast_beef_pans_quantity" min="1" max="<%= @the_menu.roast_beef_pans %>">
+    <input type="submit" value="Sign Up for Roast Beef Pans">
+  </form>
+</div>
+
+  <form action="/sign_up_for_menu_item" method="post">
+    <input type="hidden" name="menu_id" value="<%= @the_menu.id %>">
+    <label for="chicken_pans_quantity">Chicken Pans:</label>
+    <input id="chicken_pans_quantity" type="number" name="chicken_pans_quantity" min="1" max="<%= @the_menu.chicken_pans %>">
+    <input type="submit" value="Sign Up for Chicken Pans">
+  </form>
+</div>
+
+  <form action="/sign_up_for_menu_item" method="post">
+    <input type="hidden" name="menu_id" value="<%= @the_menu.id %>">
+    <label for="salad_pans_quantity">Salad Pans:</label>
+    <input id="salad_pans_quantity" type="number" name="salad_pans_quantity" min="1" max="<%= @the_menu.salad_pans %>">
+    <input type="submit" value="Sign Up for Salad Pans">
+  </form>
+</div>
+
+  <form action="/sign_up_for_menu_item" method="post">
+    <input type="hidden" name="menu_id" value="<%= @the_menu.id %>">
+    <label for="vegetable_pans_quantity">Vegetable Pans:</label>
+    <input id="vegetable_pans_quantity" type="number" name="vegetable_pans_quantity" min="1" max="<%= @the_menu.vegetable_pans %>">
+    <input type="submit" value="Sign Up for Vegetable Pans">
+  </form>
+</div>
+
+  <form action="/sign_up_for_menu_item" method="post">
+    <input type="hidden" name="menu_id" value="<%= @the_menu.id %>">
+    <label for="rice_pans_quantity">Rice Pans:</label>
+    <input id="rice_pans_quantity" type="number" name="rice_pans_quantity" min="1" max="<%= @the_menu.rice_pans %>">
+    <input type="submit" value="Sign Up for Rice Pans">
+  </form>
+</div>
+
+  <form action="/sign_up_for_menu_item" method="post">
+    <input type="hidden" name="menu_id" value="<%= @the_menu.id %>">
+    <label for="sweet_potato_pans_quantity">Sweet Potato Pans:</label>
+    <input id="sweet_potato_pans_quantity" type="number" name="sweet_potato_pans_quantity" min="1" max="<%= @the_menu.sweet_potato_pans %>">
+    <input type="submit" value="Sign Up for Sweet Potato Pans">
+  </form>
+</div>
+
+  <form action="/sign_up_for_menu_item" method="post">
+    <input type="hidden" name="menu_id" value="<%= @the_menu.id %>">
+    <label for="dessert_pans_quantity">Dessert Pans:</label>
+    <input id="dessert_pans_quantity" type="number" name="dessert_pans_quantity" min="1" max="<%= @the_menu.dessert_pans %>">
+    <input type="submit" value="Sign Up for Dessert Pans">
+  </form>
+</div>
+<hr>

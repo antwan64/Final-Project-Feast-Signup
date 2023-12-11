@@ -21,5 +21,75 @@ class Menu < ApplicationRecord
 
   belongs_to :event, counter_cache: true
 
+  def sign_up_for_roast_beef_pans(quantity)
+    if self.roast_beef_pans >= quantity
+      self.roast_beef_pans -= quantity
+      return self.save
+    else
+      # Not enough chicken pans left
+      return false
+    end
+  end
+
+  def sign_up_for_chicken_pans(quantity)
+    if self.chicken_pans >= quantity
+      self.chicken_pans -= quantity
+      return self.save
+    else
+      # Not enough chicken pans left
+      return false
+    end
+  end
+
+  def sign_up_for_salad_pans(quantity)
+    if self.salad_pans >= quantity
+      self.salad_pans -= quantity
+      return self.save
+    else
+      # Not enough chicken pans left
+      return false
+    end
+  end
+
+
+  def sign_up_for_vegetable_pans(quantity)
+    if self.vegetable_pans >= quantity
+      self.vegetable_pans -= quantity
+      return self.saverice
+      # Not enough chicken pans left
+      return false
+    end
+  end
+  def sign_up_for_rice_pans(quantity)
+    if self.rice_pans >= quantity
+      self.rice_pans -= quantity
+      return self.save
+    else
+      # Not enough chicken pans left
+      return false
+    end
+  end
+
+  def sign_up_for_sweet_potato_pans(quantity)
+    if self.sweet_potato_pans >= quantity
+      self.sweet_potato_pans -= quantity
+      return self.save
+    else
+      # Not enough chicken pans left
+      return false
+    end
+  end
+  def sign_up_for_dessert_pans(quantity)
+    if self.dessert_pans >= quantity
+      self.dessert_pans -= quantity
+      return self.save
+    else
+      # Not enough chicken pans left
+      return false
+    end
+  end
+  
+  
+
 
 end

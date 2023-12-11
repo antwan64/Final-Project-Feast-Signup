@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   # UPDATE
   
   post("/modify_menu/:path_id", { :controller => "menus", :action => "update" })
+
+  post("/sign_up_for_menu_item", { :controller => "menus", :action => "sign_up_for_menu_item" })
   
   # DELETE
   get("/delete_menu/:path_id", { :controller => "menus", :action => "destroy" })
