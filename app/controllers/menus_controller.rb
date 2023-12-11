@@ -53,7 +53,7 @@ class MenusController < ApplicationController
     the_menu.chicken_pans = params.fetch("query_chicken_pans")
     the_menu.salad_pans = params.fetch("query_salad_pans")
     the_menu.vegetable_pans = params.fetch("query_vegetable_pans")
-    the_menu.user_id = params.fetch("query_user_id")
+    the_menu.user_id = current_user.id
     the_menu.event_id = params.fetch("query_event_id")
     the_menu.rice_pans = params.fetch("query_rice_pans")
     the_menu.sweet_potato_pans = params.fetch("query_sweet_potato_pans")

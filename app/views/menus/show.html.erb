@@ -122,7 +122,7 @@
       <div>
         <label for="vegetable_pans_box">
           Vegetable pans
-        </lanumber
+        </div>
 
         <input type="number" id="vegetable_pans_box" name="query_vegetable_pans" value="<%= @the_menu.vegetable_pans %>">
       </div>
@@ -147,8 +147,11 @@
         <label for="dessert_pans_box">
           Dessert pans
         </label>
-
         <input type="number" id="dessert_pans_box" name="query_dessert_pans" value="<%= @the_menu.dessert_pans %>">
+      </div>
+      <div>
+        <label for="event_id_box"></label>
+        <input type="hidden" id="event_id_box" name="query_event_id" value="<%= @the_menu.event_id %>">
       </div>
 
       <button>
