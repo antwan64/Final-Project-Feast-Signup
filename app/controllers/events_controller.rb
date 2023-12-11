@@ -16,8 +16,8 @@ class EventsController < ApplicationController
     matching_events = Event.where({ :id => the_id })
 
     @the_event = matching_events.at(0)
-   ## matching_users = User.where({ :id => @the_event.user_id })
-   ## @event_creator = matching_users.at(0)
+    @menu = @the_event.menus.first
+
 
     render({ :template => "events/show" })
   end

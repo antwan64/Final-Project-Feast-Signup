@@ -35,11 +35,6 @@
         <%= @the_event.event_name %>
       </dd>
 
-
- 
-
-    
-
       <dt>
         Created at
       </dt>
@@ -83,10 +78,6 @@
         <input type="text" id="event_name_box" name="query_event_name" value="<%= @the_event.event_name %>">
       </div>
 
-
-
-
-
       <button>
         Update event
       </button>
@@ -99,6 +90,10 @@
 
 <div>
   <div>
+  <% if @menu.nil? %>
+  <!-- Display the "Add Menu" form or button here -->
+  <!-- <%= link_to "Add Menu", new_menu_path(event_id: @the_event.id), method: :get %> -->
+
     <h2>
       Add Menu
     </h2>
@@ -160,6 +155,11 @@
     </form>
   </div>
 </div>
+
+<% else %>
+  <!-- If there is a menu, you can display information about it or simply do nothing -->
+  <p>A menu already exists for this event.</p>
+<% end %>
 
 <% else %>
   <p>Please sign in to sign up for menu items.</p>
