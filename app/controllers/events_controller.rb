@@ -22,7 +22,7 @@ class EventsController < ApplicationController
     the_event.event_date = params.fetch("query_event_date")
     the_event.event_name = params.fetch("query_event_name")
     the_event.user_id = params.fetch("query_user_id")
-    the_event.menus_count = params.fetch("query_menus_count")
+    the_event.menus_count = 1
 
     if the_event.valid?
       the_event.save
@@ -39,7 +39,7 @@ class EventsController < ApplicationController
     the_event.event_date = params.fetch("query_event_date")
     the_event.event_name = params.fetch("query_event_name")
     the_event.user_id = params.fetch("query_user_id")
-    the_event.menus_count = params.fetch("query_menus_count")
+    the_event.menus_count = 1
 
     if the_event.valid?
       the_event.save

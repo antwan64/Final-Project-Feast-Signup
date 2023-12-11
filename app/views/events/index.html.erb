@@ -39,13 +39,7 @@
         <input type="text" id="user_id_box" name="query_user_id">
       </div>
 
-      <div>
-        <label for="menus_count_box">
-          Menus count
-        </label>
 
-        <input type="text" id="menus_count_box" name="query_menus_count">
-      </div>
 
       <button>
         Create event
@@ -75,9 +69,7 @@
           User
         </th>
 
-        <th>
-          Menus count
-        </th>
+
 
         <th>
           Created at
@@ -109,9 +101,7 @@
           <%= an_event.user_id %>
         </td>
 
-        <td>
-          <%= an_event.menus_count %>
-        </td>
+ 
 
         <td>
           <%= time_ago_in_words(an_event.created_at) %> ago
