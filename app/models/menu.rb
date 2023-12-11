@@ -20,4 +20,6 @@ class Menu < ApplicationRecord
   belongs_to :user, counter_cache: :foods_count
 
   belongs_to :event, counter_cache: true
+
+
 end

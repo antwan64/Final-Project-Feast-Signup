@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Menu #<%= @the_menu.id %> details
+      Menu for <%= @event.event_name %> <%= @event.event_date.strftime("%m/%d/%Y") %>
     </h1>
 
     <div>
@@ -47,19 +47,7 @@
         <%= @the_menu.vegetable_pans %>
       </dd>
 
-      <dt>
-        User
-      </dt>
-      <dd>
-        <%= @the_menu.user_id %>
-      </dd>
 
-      <dt>
-        Event
-      </dt>
-      <dd>
-        <%= @the_menu.event_id %>
-      </dd>
 
       <dt>
         Rice pans

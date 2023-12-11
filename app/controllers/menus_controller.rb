@@ -14,6 +14,13 @@ class MenusController < ApplicationController
 
     @the_menu = matching_menus.at(0)
 
+
+    matching_events = Event.where({ :id => @the_menu.event_id })
+    @event = matching_events.at(0)
+    
+
+
+
     render({ :template => "menus/show" })
   end
 
