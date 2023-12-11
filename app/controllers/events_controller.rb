@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  
+
   def index
     matching_events = Event.all
 
@@ -16,8 +16,8 @@ class EventsController < ApplicationController
     matching_events = Event.where({ :id => the_id })
 
     @the_event = matching_events.at(0)
-    matching_users = User.where({ :id => @the_event.user_id })
-    @event_creator = matching_users.at(0)
+   ## matching_users = User.where({ :id => @the_event.user_id })
+   ## @event_creator = matching_users.at(0)
 
     render({ :template => "events/show" })
   end
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     the_event = Event.new
     the_event.event_date = params.fetch("query_event_date")
     the_event.event_name = params.fetch("query_event_name")
-    the_event.user_id = params.fetch("query_user_id")
+    the_event.user_id = current_user.id
     the_event.menus_count = 1
 
     if the_event.valid?
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
 
     the_event.event_date = params.fetch("query_event_date")
     the_event.event_name = params.fetch("query_event_name")
-    the_event.user_id = params.fetch("query_user_id")
+    the_event.user_id = current_user.id
     the_event.menus_count = 1
 
     if the_event.valid?

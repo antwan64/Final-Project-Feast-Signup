@@ -15,4 +15,12 @@ class Event < ApplicationRecord
   belongs_to :user, counter_cache: true
 
   has_many  :menus, dependent: :destroy
+
+  validates :event_date, presence: true
+
+  validates :event_date, uniqueness: true
+
+  validates :event_name, presence: true
+
+  validates :event_name, uniqueness: false
 end
