@@ -1,0 +1,11 @@
+<h1>Items You've Signed Up For</h1>
+
+<ul>
+  <% @signed_up_items.each do |item| %>
+    <li>
+      Menu ID: <%= item.menu_id %>, Quantity: <%= item.quantity %>
+      
+      <!-- Add additional details as needed -->
+    </li>
+  <% end %>
+</ul>

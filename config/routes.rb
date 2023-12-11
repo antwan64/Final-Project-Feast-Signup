@@ -41,6 +41,9 @@ Rails.application.routes.draw do
   # DELETE
   get("/delete_menu/:path_id", { :controller => "menus", :action => "destroy" })
 
+    # READ
+  get("/users/signed_up_items", { :controller => "users", :action => "signed_up_items" })
+
   #------------------------------
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
