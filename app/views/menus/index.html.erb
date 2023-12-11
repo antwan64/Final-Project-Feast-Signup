@@ -1,0 +1,214 @@
+<div>
+  <div>
+    <h1>
+      List of all menus
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new menu
+    </h2>
+
+    <form action="/insert_menu" method="post">
+      <div>
+        <label for="roast_beef_pans_box">
+          Roast beef pans
+        </label>
+
+        <input type="text" id="roast_beef_pans_box" name="query_roast_beef_pans">
+      </div>
+
+      <div>
+        <label for="chicken_pans_box">
+          Chicken pans
+        </label>
+
+        <input type="text" id="chicken_pans_box" name="query_chicken_pans">
+      </div>
+
+      <div>
+        <label for="salad_pans_box">
+          Salad pans
+        </label>
+
+        <input type="text" id="salad_pans_box" name="query_salad_pans">
+      </div>
+
+      <div>
+        <label for="vegetable_pans_box">
+          Vegetable pans
+        </label>
+
+        <input type="text" id="vegetable_pans_box" name="query_vegetable_pans">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="event_id_box">
+          Event
+        </label>
+
+        <input type="text" id="event_id_box" name="query_event_id">
+      </div>
+
+      <div>
+        <label for="rice_pans_box">
+          Rice pans
+        </label>
+
+        <input type="text" id="rice_pans_box" name="query_rice_pans">
+      </div>
+
+      <div>
+        <label for="sweet_potato_pans_box">
+          Sweet potato pans
+        </label>
+
+        <input type="text" id="sweet_potato_pans_box" name="query_sweet_potato_pans">
+      </div>
+
+      <div>
+        <label for="dessert_pans_box">
+          Dessert pans
+        </label>
+
+        <input type="text" id="dessert_pans_box" name="query_dessert_pans">
+      </div>
+
+      <button>
+        Create menu
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Roast beef pans
+        </th>
+
+        <th>
+          Chicken pans
+        </th>
+
+        <th>
+          Salad pans
+        </th>
+
+        <th>
+          Vegetable pans
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Event
+        </th>
+
+        <th>
+          Rice pans
+        </th>
+
+        <th>
+          Sweet potato pans
+        </th>
+
+        <th>
+          Dessert pans
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_menus.each do |a_menu| %>
+      <tr>
+        <td>
+          <%= a_menu.id %>
+        </td>
+
+        <td>
+          <%= a_menu.roast_beef_pans %>
+        </td>
+
+        <td>
+          <%= a_menu.chicken_pans %>
+        </td>
+
+        <td>
+          <%= a_menu.salad_pans %>
+        </td>
+
+        <td>
+          <%= a_menu.vegetable_pans %>
+        </td>
+
+        <td>
+          <%= a_menu.user_id %>
+        </td>
+
+        <td>
+          <%= a_menu.event_id %>
+        </td>
+
+        <td>
+          <%= a_menu.rice_pans %>
+        </td>
+
+        <td>
+          <%= a_menu.sweet_potato_pans %>
+        </td>
+
+        <td>
+          <%= a_menu.dessert_pans %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_menu.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_menu.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/menus/<%= a_menu.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

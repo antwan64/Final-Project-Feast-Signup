@@ -1,0 +1,191 @@
+<div>
+  <div>
+    <h1>
+      Menu #<%= @the_menu.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/menus">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_menu/<%= @the_menu.id %>">
+          Delete menu
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Roast beef pans
+      </dt>
+      <dd>
+        <%= @the_menu.roast_beef_pans %>
+      </dd>
+
+      <dt>
+        Chicken pans
+      </dt>
+      <dd>
+        <%= @the_menu.chicken_pans %>
+      </dd>
+
+      <dt>
+        Salad pans
+      </dt>
+      <dd>
+        <%= @the_menu.salad_pans %>
+      </dd>
+
+      <dt>
+        Vegetable pans
+      </dt>
+      <dd>
+        <%= @the_menu.vegetable_pans %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_menu.user_id %>
+      </dd>
+
+      <dt>
+        Event
+      </dt>
+      <dd>
+        <%= @the_menu.event_id %>
+      </dd>
+
+      <dt>
+        Rice pans
+      </dt>
+      <dd>
+        <%= @the_menu.rice_pans %>
+      </dd>
+
+      <dt>
+        Sweet potato pans
+      </dt>
+      <dd>
+        <%= @the_menu.sweet_potato_pans %>
+      </dd>
+
+      <dt>
+        Dessert pans
+      </dt>
+      <dd>
+        <%= @the_menu.dessert_pans %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_menu.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_menu.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit menu
+    </h2>
+
+    <form action="/modify_menu/<%= @the_menu.id %>"  method="post" >
+      <div>
+        <label for="roast_beef_pans_box">
+          Roast beef pans
+        </label>
+
+        <input type="text" id="roast_beef_pans_box" name="query_roast_beef_pans" value="<%= @the_menu.roast_beef_pans %>">
+      </div>
+
+      <div>
+        <label for="chicken_pans_box">
+          Chicken pans
+        </label>
+
+        <input type="text" id="chicken_pans_box" name="query_chicken_pans" value="<%= @the_menu.chicken_pans %>">
+      </div>
+
+      <div>
+        <label for="salad_pans_box">
+          Salad pans
+        </label>
+
+        <input type="text" id="salad_pans_box" name="query_salad_pans" value="<%= @the_menu.salad_pans %>">
+      </div>
+
+      <div>
+        <label for="vegetable_pans_box">
+          Vegetable pans
+        </label>
+
+        <input type="text" id="vegetable_pans_box" name="query_vegetable_pans" value="<%= @the_menu.vegetable_pans %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_menu.user_id %>">
+      </div>
+
+      <div>
+        <label for="event_id_box">
+          Event
+        </label>
+
+        <input type="text" id="event_id_box" name="query_event_id" value="<%= @the_menu.event_id %>">
+      </div>
+
+      <div>
+        <label for="rice_pans_box">
+          Rice pans
+        </label>
+
+        <input type="text" id="rice_pans_box" name="query_rice_pans" value="<%= @the_menu.rice_pans %>">
+      </div>
+
+      <div>
+        <label for="sweet_potato_pans_box">
+          Sweet potato pans
+        </label>
+
+        <input type="text" id="sweet_potato_pans_box" name="query_sweet_potato_pans" value="<%= @the_menu.sweet_potato_pans %>">
+      </div>
+
+      <div>
+        <label for="dessert_pans_box">
+          Dessert pans
+        </label>
+
+        <input type="text" id="dessert_pans_box" name="query_dessert_pans" value="<%= @the_menu.dessert_pans %>">
+      </div>
+
+      <button>
+        Update menu
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

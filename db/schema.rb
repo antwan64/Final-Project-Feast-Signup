@@ -10,5 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_11_043142) do
+  create_table "events", force: :cascade do |t|
+    t.date "event_date"
+    t.string "event_name"
+    t.integer "user_id"
+    t.integer "menus_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.integer "roast_beef_pans"
+    t.integer "chicken_pans"
+    t.integer "salad_pans"
+    t.integer "vegetable_pans"
+    t.integer "user_id"
+    t.integer "event_id"
+    t.integer "rice_pans"
+    t.string "sweet_potato_pans"
+    t.integer "dessert_pans"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "foods_count"
+    t.integer "events_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
 end
