@@ -47,9 +47,7 @@
   <div>
     <table border="1">
       <tr>
-        <th>
-          ID
-        </th>
+
 
         <th>
           Event date
@@ -59,9 +57,7 @@
           Event name
         </th>
 
-        <th>
-          User
-        </th>
+
 
 
 
@@ -79,9 +75,7 @@
 
       <% @list_of_events.each do |an_event| %>
       <tr>
-        <td>
-          <%= an_event.id %>
-        </td>
+
 
         <td>
           <%= an_event.event_date %>
@@ -90,13 +84,6 @@
         <td>
           <%= an_event.event_name %>
         </td>
-
-        <td>
-          <%= an_event.user_id %>
-        </td>
-
- 
-
         <td>
           <%= time_ago_in_words(an_event.created_at) %> ago
         </td>

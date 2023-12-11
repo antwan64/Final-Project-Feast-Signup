@@ -8,77 +8,7 @@
 
 <hr>
 
-<div>
-  <div>
-    <h2>
-      Add a new menu
-    </h2>
 
-    <form action="/insert_menu" method="post">
-      <div>
-        <label for="roast_beef_pans_box">
-          Roast beef pans
-        </label>
-
-        <input type="text" id="roast_beef_pans_box" name="query_roast_beef_pans">
-      </div>
-
-      <div>
-        <label for="chicken_pans_box">
-          Chicken pans
-        </label>
-
-        <input type="text" id="chicken_pans_box" name="query_chicken_pans">
-      </div>
-
-      <div>
-        <label for="salad_pans_box">
-          Salad pans
-        </label>
-
-        <input type="text" id="salad_pans_box" name="query_salad_pans">
-      </div>
-
-      <div>
-        <label for="vegetable_pans_box">
-          Vegetable pans
-        </label>
-
-        <input type="text" id="vegetable_pans_box" name="query_vegetable_pans">
-      </div>
-
-
-
-      <div>
-        <label for="rice_pans_box">
-          Rice pans
-        </label>
-
-        <input type="text" id="rice_pans_box" name="query_rice_pans">
-      </div>
-
-      <div>
-        <label for="sweet_potato_pans_box">
-          Sweet potato pans
-        </label>
-
-        <input type="text" id="sweet_potato_pans_box" name="query_sweet_potato_pans">
-      </div>
-
-      <div>
-        <label for="dessert_pans_box">
-          Dessert pans
-        </label>
-
-        <input type="text" id="dessert_pans_box" name="query_dessert_pans">
-      </div>
-
-      <button>
-        Create menu
-      </button>
-    </form>
-  </div>
-</div>
 
 <hr>
 <div>
@@ -86,7 +16,11 @@
     <table border="1">
       <tr>
         <th>
-          ID
+          Event Name
+        </th>
+        
+        <th>
+          Event Date
         </th>
 
         <th>
@@ -103,14 +37,6 @@
 
         <th>
           Vegetable pans
-        </th>
-
-        <th>
-          User
-        </th>
-
-        <th>
-          Event
         </th>
 
         <th>
@@ -137,10 +63,21 @@
         </th>
       </tr>
 
+
+
       <% @list_of_menus.each do |a_menu| %>
+
+      <% matching_events = Event.where({ :id => a_menu.event_id}) %>
+      <% event = matching_events.first %>
+    
       <tr>
         <td>
-          <%= a_menu.id %>
+
+          <%= event.event_name %>
+        </td>
+
+         <td>
+          <%= event.event_date.strftime("%m/%d/%Y") %>
         </td>
 
         <td>
@@ -157,14 +94,6 @@
 
         <td>
           <%= a_menu.vegetable_pans %>
-        </td>
-
-        <td>
-          <%= a_menu.user_id %>
-        </td>
-
-        <td>
-          <%= a_menu.event_id %>
         </td>
 
         <td>
@@ -192,6 +121,7 @@
           </a>
         </td>
       </tr>
+
       <% end %>
     </table>
   </div>

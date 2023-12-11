@@ -3,6 +3,7 @@ class MenusController < ApplicationController
     matching_menus = Menu.all
 
     @list_of_menus = matching_menus.order({ :created_at => :desc })
+   
 
     render({ :template => "menus/index" })
   end
