@@ -91,8 +91,7 @@
 <div>
   <div>
   <% if @menu.nil? %>
-  <!-- Display the "Add Menu" form or button here -->
-  <!-- <%= link_to "Add Menu", new_menu_path(event_id: @the_event.id), method: :get %> -->
+
 
     <h2>
       Add Menu
@@ -101,42 +100,38 @@
       <!-- Assuming the Menu model has attributes like roast_beef_pans, chicken_pans, etc. -->
       <div>
         <label for="roast_beef_pans_box">Roast beef pans:</label>
-        <input type="number" id="roast_beef_pans_box" name="query_roast_beef_pans">
+        <input type="number" id="roast_beef_pans_box" name="query_roast_beef_pans" min="0">
       </div>
 
-      <div>
-        <label for="chicken_pans_box">Chicken pans:</label>
-        <input type="number" id="chicken_pans_box" name="query_chicken_pans">
-      </div>
 
         <div>
         <label for="chicken_pans_box">Chicken pans:</label>
-        <input type="number" id="chicken_pans_box" name="query_chicken_pans">
+        <input type="number" id="chicken_pans_box" name="query_chicken_pans" min="0">
       </div>
 
       <div>
         <label for="salad_pans_box">Salad pans:</label>
-        <input type="number" id="salad_pans_box" name="query_salad_pans">
+        <input type="number" id="salad_pans_box" name="query_salad_pans" min="0">
       </div>
 
       <div>
         <label for="vegetable_pans_box">Vegetable pans:</label>
-        <input type="number" id="vegetable_pans_box" name="query_vegetable_pans">
+        <input type="number" id="vegetable_pans_box" name="query_vegetable_pans" min="0">
       </div>
 
       <div>
         <label for="rice_pans_box">Rice pans:</label>
-        <input type="number" id="rice_pans_box" name="query_rice_pans">
+        <input type="number" id="rice_pans_box" name="query_rice_pans" min="0">
       </div>
 
       <div>
         <label for="sweet_potato_pans_box">Sweet potato pans:</label>
-        <input type="number" id="sweet_potato_pans_box" name="query_sweet_potato_pans">
+        <input type="number" id="sweet_potato_pans_box" name="query_sweet_potato_pans" min="0">
       </div>
 
       <div>
         <label for="dessert_pans_box">Dessert pans:</label>
-        <input type="number" id="dessert_pans_box" name="query_dessert_pans">
+        <input type="number" id="dessert_pans_box" name="query_dessert_pans" min="0">
       </div>
 
       <!-- Add additional fields for other menu items... -->

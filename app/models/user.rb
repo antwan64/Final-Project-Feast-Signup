@@ -26,6 +26,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         
+
          validates :first_name, presence: true
 
          validates :first_name, uniqueness: false
@@ -37,4 +39,10 @@ class User < ApplicationRecord
          has_many  :foods, class_name: "Menu", dependent: :destroy
 
          has_many  :events, dependent: :destroy
+
+         has_many :user_menu_items
+        has_many :menus, through: :user_menu_items
+
+
+
 end

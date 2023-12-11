@@ -21,6 +21,10 @@ class Menu < ApplicationRecord
 
   belongs_to :event, counter_cache: true
 
+  has_many :user_menu_items
+  has_many :users, through: :user_menu_items
+
+
   def sign_up_for_roast_beef_pans(quantity)
     if self.roast_beef_pans >= quantity
       self.roast_beef_pans -= quantity
