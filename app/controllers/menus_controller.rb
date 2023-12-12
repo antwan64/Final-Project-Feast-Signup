@@ -73,7 +73,7 @@ class MenusController < ApplicationController
     the_menu = Menu.where({ :id => params.fetch("menu_id") }).at(0)
     messages = []
 
-  # Your sign-up logic here, example for roast beef pans:
+
     roast_beef_pans_quantity = params.fetch("roast_beef_pans_quantity").to_i
     if roast_beef_pans_quantity > 0
       if the_menu.sign_up_for_roast_beef_pans(roast_beef_pans_quantity)
