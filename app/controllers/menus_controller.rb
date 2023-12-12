@@ -70,81 +70,78 @@ class MenusController < ApplicationController
   end
 
   def sign_up_for_menu_item
-    menu_id = params.fetch("menu_id")
-    
-    chicken_pans_quantity = params.fetch("chicken_pans_quantity").to_i
+    the_menu = Menu.where({ :id => params.fetch("menu_id") }).at(0)
+    messages = []
 
-    the_menu = Menu.where({ :id => menu_id }).at(0)
-
-    if the_menu.sign_up_for_chicken_pans(chicken_pans_quantity)
-      # Successful signup
-      redirect_to("/menus/#{the_menu.id}", { :notice => "You have successfully signed up for #{chicken_pans_quantity} chicken pans." })
-    else
-      # Not enough chicken pans
-      redirect_to("/menus/#{the_menu.id}", { :alert => "There are not enough chicken pans available to fulfill your request." })
-    end
-
+  # Your sign-up logic here, example for roast beef pans:
     roast_beef_pans_quantity = params.fetch("roast_beef_pans_quantity").to_i
-
-    if the_menu.sign_up_for_roast_beef_pans(roast_beef_pans_quantity)
-      # Successful signup
-      redirect_to("/menus/#{the_menu.id}", { :notice => "You have successfully signed up for #{roast_beef_pans_quantity} roast beef pans." })
-    else
-      # Not enough roast beef pans
-      redirect_to("/menus/#{the_menu.id}", { :alert => "There are not enough roast beef pans available to fulfill your request." })
-    end
-    
-    salad_pans_quantity = params.fetch("salad_pans_quantity").to_i
-
-    if the_menu.sign_up_for_salad_pans(salad_pans_quantity)
-      # Successful signup
-      redirect_to("/menus/#{the_menu.id}", { :notice => "You have successfully signed up for #{salad_pans_quantity} salad pans." })
-    else
-      # Not enough salad pans
-      redirect_to("/menus/#{the_menu.id}", { :alert => "There are not enough salad pans available to fulfill your request." })
+    if roast_beef_pans_quantity > 0
+      if the_menu.sign_up_for_roast_beef_pans(roast_beef_pans_quantity)
+        messages << "You have successfully signed up for #{roast_beef_pans_quantity} roast beef pans."
+      else
+        messages << "There are not enough roast beef pans available to fulfill your request."
+      end
     end
 
-    vegetable_pans_quantity = params.fetch("vegetable_pans_quantity").to_i
+    chicken_pans_quantity = params.fetch("chicken_pans_quantity").to_i
+    if chicken_pans_quantity > 0
+      if the_menu.sign_up_for_chicken_pans(chicken_pans_quantity)
+        messages << "You have successfully signed up for #{chicken_pans_quantity} chicken pans."
+      else
+        messages << "There are not enough chicken pans available to fulfill your request."
+      end
+    end
 
-    if the_menu.sign_up_for_vegetable_pans(vegetable_pans_quantity)
-      # Successful signup
-      redirect_to("/menus/#{the_menu.id}", { :notice => "You have successfully signed up for #{vegetable_pans_quantity} vegetable pans." })
-    else
-      # Not enough vegetable pans
-      redirect_to("/menus/#{the_menu.id}", { :alert => "There are not enough vegetable pans available to fulfill your request." })
+  vegetable_pans_quantity = params.fetch("vegetable_pans_quantity").to_i
+    if vegetable_pans_quantity > 0
+      if the_menu.sign_up_for_vegetable_pans(vegetable_pans_quantity)
+        messages << "You have successfully signed up for #{vegetable_pans_quantity} vegetable pans."
+      else
+        messages << "There are not enough vegetable pans available to fulfill your request."
+      end
     end
 
     dessert_pans_quantity = params.fetch("dessert_pans_quantity").to_i
-
-    if the_menu.sign_up_for_dessert_pans(dessert_pans_quantity)
-      # Successful signup
-      redirect_to("/menus/#{the_menu.id}", { :notice => "You have successfully signed up for #{dessert_pans_quantity} dessert pans." })
-    else
-      # Not enough dessert pans
-      redirect_to("/menus/#{the_menu.id}", { :alert => "There are not enough dessert pans available to fulfill your request." })
-    end
+      if dessert_pans_quantity > 0
+        if the_menu.sign_up_for_dessert_pans(dessert_pans_quantity)
+          messages << "You have successfully signed up for #{dessert_pans_quantity} dessert pans."
+        else
+          messages << "There are not enough dessert pans available to fulfill your request."
+        end
+      end
     
     rice_pans_quantity = params.fetch("rice_pans_quantity").to_i
+      if rice_pans_quantity > 0
+        if the_menu.sign_up_for_rice_pans(rice_pans_quantity)
+          messages << "You have successfully signed up for #{rice_pans_quantity} rice pans."
+        else
+        messages << "There are not enough rice pans available to fulfill your request."
+        end
+      end
 
-    if the_menu.sign_up_for_rice_pans(rice_pans_quantity)
-      # Successful signup
-      redirect_to("/menus/#{the_menu.id}", { :notice => "You have successfully signed up for #{rice_pans_quantity} rice pans." })
-    else
-      # Not enough rice pans
-      redirect_to("/menus/#{the_menu.id}", { :alert => "There are not enough rice pans available to fulfill your request." })
-    end
+    sweet_potato_pans_quantity = params.fetch("rice_pans_quantity").to_i
+      if sweet_potato_pans_quantity > 0
+        if the_menu.sign_up_for_sweet_potato_pans(sweet_potato_pans_quantity)
+          messages << "You have successfully signed up for #{sweet_potato_pans_quantity} sweet_potato pans."
+        else
+        messages << "There are not enough sweet_potato pans available to fulfill your request."
+        end
+      end
 
-    sweet_potato_pans_quantity = params.fetch("sweet_potato_pans_quantity").to_i
-
-    if the_menu.sign_up_for_sweet_potato_pans(sweet_potato_pans_quantity)
-      # Successful signup
-      redirect_to("/menus/#{the_menu.id}", { :notice => "You have successfully signed up for #{sweet_potato_pans_quantity} sweet potato pans." })
-    else
-      # Not enough sweet_potato pans
-      redirect_to("/menus/#{the_menu.id}", { :alert => "There are not enough sweet_potato pans available to fulfill your request." })
-    end
+    salad_pans_quantity = params.fetch("salad_pans_quantity").to_i
+      if salad_pans_quantity > 0
+        if the_menu.sign_up_for_salad_pans(salad_pans_quantity)
+          messages << "You have successfully signed up for #{salad_pans_quantity} salad pans."
+        else
+        messages << "There are not enough salad pans available to fulfill your request."
+        end
+      end
     
-    
+    if messages.any?
+      redirect_to("/menus/#{the_menu.id}", { :notice => messages.join(", ") })
+    else
+      redirect_to("/menus/#{the_menu.id}", { :alert => "No items were selected for sign-up." })
+    end   
   end
 
   def destroy

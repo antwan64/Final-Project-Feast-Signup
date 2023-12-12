@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   #devise_for :users
   devise_for :users, controllers: { registrations: 'users/registrations' }
+
+  # READ
+  get("users/signed_up_items", { :controller => "users", :action => "signed_up_items" })
+
+  post("/sign_up_for_menu_item", { :controller => "menus", :action => "sign_up_for_menu_item" }) 
   # Routes for the Event resource:
+
+
 
   root to: "events#index"
 

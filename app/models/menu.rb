@@ -59,7 +59,7 @@ class Menu < ApplicationRecord
   def sign_up_for_vegetable_pans(quantity)
     if self.vegetable_pans >= quantity
       self.vegetable_pans -= quantity
-      return self.saverice
+      return self.save
       # Not enough chicken pans left
       return false
     end
